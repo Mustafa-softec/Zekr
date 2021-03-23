@@ -1,0 +1,146 @@
+<div class="row">
+
+  <div class="col-12 mb-4">
+    <div class="tasbeeh-type text-center">
+      <h6 class="text-white">
+        {{Zekr[selectZekr].Name}}
+      </h6>
+    </div>
+  </div>
+
+  <div class="col-12 my-4 d-flex justify-content-center">
+    <div class="count-wrapper">
+      <div class="count-numbers">
+        <h5 class="text-white text-center">عدد التسبيحات</h5>
+
+        <h6 class="mb-0 text-white">
+          {{Count}}
+        </h6>
+      </div>
+      <div class="countIncrease-circle" (click)="Increase()">
+        <img src="../../../assets/images/tap.png" alt="">
+        <h6 class="mb-0 my-2">
+          تسبيح
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 my-2">
+    <div class="row my-5">
+      <div class="col-6">
+        <div class="each-action">
+          <div class="content-box-wrapper mr-auto px-1 py-1" (click)="ResetCount()">
+            <div class="icon">
+              <img src="../../../assets/images/refreshing.png" alt="">
+            </div>
+            <div class="title">
+              <h6 class="mb-0 my-2">
+                اعادة الضبط لكل التسبيح
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="each-action">
+          <div class="content-box-wrapper ml-auto px-1 py-1" (click)="ResetZekrCount()">
+            <div class="icon">
+              <img src="../../../assets/images/refreshing.png" alt="">
+            </div>
+            <div class="title">
+              <h6 class="mb-0 my-2">
+                بدأ تسبيح من جديد
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-6">
+        <div class="each-action" (click)="openModalRecord(templateRecord)">
+          <div class="content-box-wrapper mr-auto px-1 py-1">
+            <div class="icon">
+              <img src="../../../assets/images/microphone.png" alt="">
+            </div>
+            <div class="title">
+              <h6 class="mb-0 my-2">
+                تسجيل تسبيح
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="each-action" (click)="openModalAddAzkar(templateAzkar)">
+          <div class="content-box-wrapper ml-auto px-1 py-1">
+            <div class="icon">
+              <img src="../../../assets/images/add.png" alt="">
+            </div>
+            <div class="title">
+              <h6 class="mb-0 my-2">
+                أضف تسبيح جديد
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Record Popup -->
+<ng-template #templateRecord>
+  <div class="modal-header"  >
+    <h4 class="modal-title pull-left" >تسجيل التسبيح</h4>
+    <button type="button" class="close pull-left" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <app-record></app-record>
+  </div>
+</ng-template>
+
+<!-- Add Azkar Popup -->
+<ng-template #templateAzkar>
+  <div class="modal-header" >
+    <h4 class="modal-title pull-left" >أضف تسبيح جديد</h4>
+    <button type="button" class="close pull-left" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="list text-right">
+          <div *ngFor="let o of Zekr,let idx = index" dir="rtl">
+            <div class="each-zekr my-2 d-flex align-items-center">
+              <input type="radio" [(value)]="o.Id" name="zekrRadio" #Zekr="ngModel" [(ngModel)]="selectZekr"
+                (change)="ChangeCount()" />
+              <div class="border-left mx-2">
+                <h6 class="mx-2 text-primary">
+                  {{o.Count}}
+                </h6>
+
+              </div>
+              <h6 class="mb-0">
+                {{o.Name}}
+
+              </h6>
+
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="input">
+          <input type="text" class="form-control rtl" dir="rtl" placeholder="اضف دعاء جديد" [(ngModel)]="ZekrName" />
+        </div>
+        <button class="btn btn-primary my-2" (click)="AddNewZekr()"> اضافه دعاء</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
