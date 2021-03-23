@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "657089830703",
+    "project_id": "zekr-a60ff",
+    "storage_bucket": "zekr-a60ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657089830703:android:04f8c4646589f689bb4bda",
+        "android_client_info": {
+          "package_name": "com.recordzekr.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657089830703-r62m3gm20fan3jn30ghmcrcsjvi4cc79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO5wkhGYRFyEoZgwGk402tQnZwLFKyv6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657089830703-r62m3gm20fan3jn30ghmcrcsjvi4cc79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
