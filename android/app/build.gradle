@@ -32,6 +32,20 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+  implementation platform('com.google.firebase:firebase-bom:26.7.0')
+  implementation platform('com.google.firebase:firebase-bom:26.6.0')
+
+  // Firebase Cloud Messaging (Java)
+  implementation 'com.google.firebase:firebase-messaging'
+
+  // Firebase Cloud Messaging (Kotlin)
+  implementation 'com.google.firebase:firebase-messaging-ktx'
+
+  // For an optimal experience using FCM, add the Firebase SDK
+  // for Google Analytics. This is recommended, but not required.
+  implementation 'com.google.firebase:firebase-analytics'
+
+  implementation 'com.google.firebase:firebase-installations-ktx:16.3.5'
 }
 
 apply from: 'capacitor.build.gradle'

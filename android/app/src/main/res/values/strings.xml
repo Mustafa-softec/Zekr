@@ -3,5 +3,7 @@
     <string name="app_name">تسابيح</string>
     <string name="title_activity_main">Tasabih</string>
     <string name="package_name">com.recordzekr.app</string>
-    <string name="custom_url_scheme">com.recordzekr.app</string>
+  <string name="msg_subscribed">msg_subscribed</string>
+  <string name="msg_subscribe_failed">msg_subscribe_failed</string>
+  <string name="custom_url_scheme">com.recordzekr.app</string>
 </resources>
