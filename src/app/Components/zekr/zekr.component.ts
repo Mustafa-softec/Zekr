@@ -39,7 +39,7 @@ export class ZekrComponent implements OnInit {
   }
 
   AddNewZekr() {
-    if(this.ZekrName != ''){
+    if(this.ZekrName != '' && this.ZekrName  != undefined){
       this.Zekr.push({ Id: this.Zekr.length, Name: this.ZekrName, Count: 0 });
       this.ZekrName = '';
       localStorage.setItem('zekr', JSON.stringify(this.Zekr));
